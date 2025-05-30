@@ -33,7 +33,7 @@ export class JuegosDataService {
 
   buscarJuegos(termino: string): Observable<Juego[]> {
     return this.juegos$.pipe(
-      map(juegos => juegos.filter(juego => 
+      map(juegos => juegos.filter(juego =>
         juego.nombre.toLowerCase().includes(termino.toLowerCase()) ||
         juego.desarrollador.toLowerCase().includes(termino.toLowerCase()) ||
         juego.categoria.toLowerCase().includes(termino.toLowerCase())
@@ -43,7 +43,7 @@ export class JuegosDataService {
 
   filtrarPorCategoria(categoria: string): Observable<Juego[]> {
     return this.juegos$.pipe(
-      map(juegos => juegos.filter(juego => 
+      map(juegos => juegos.filter(juego =>
         juego.categoria.toLowerCase() === categoria.toLowerCase()
       ))
     );
@@ -51,7 +51,7 @@ export class JuegosDataService {
 
   filtrarPorPlataforma(plataforma: string): Observable<Juego[]> {
     return this.juegos$.pipe(
-      map(juegos => juegos.filter(juego => 
+      map(juegos => juegos.filter(juego =>
         juego.plataformas.includes(plataforma)
       ))
     );
@@ -86,4 +86,10 @@ export class JuegosDataService {
       )
     );
   }
-}
+  obtenerJuegosPorPrecio(min: number, max: number): Observable<Juego[]> {
+    return this.juegos$.pipe(
+      map(juegos => juegos.filter(juego =>
+        juego.precio >= min && juego.precio <= max
+      ))
+    );
+  }}

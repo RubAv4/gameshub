@@ -1,3 +1,4 @@
+
 {
   "juegos": [
     {
@@ -511,9 +512,84 @@
         "https://play-lh.googleusercontent.com/screenshot2.jpg"
       ],
       "tags": ["MOBA", "Mobile", "5v5", "Estrategia"]
+    },
+    {
+      "id": 16,
+      "nombre": "Gran Turismo 7",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd0X3NOrAioG4t1ucOu5NIa7MqAKnrY_yNjQ&s",
+      "categoria": "Sports",
+      "desarrollador": "Polyphony Digital",
+      "fechaLanzamiento": "2016-07-14",
+      "descripcion": "videojuego de simulación de carreras de 2022 desarrollado por Polyphony Digital y publicado por Sony Interactive Entertainment.",
+      "rating": 4.5,
+      "plataformas": ["PlayStation","PC"],
+      "precio": 69.99,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7",
+          "procesador": "Qualcomm Snapdragon 410",
+          "memoria": "8 GB RAM",
+          "graficos": "GTX 1050",
+          "almacenamiento": "110 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10",
+          "procesador": "Snapdragon 625",
+          "memoria": "16 GB RAM",
+          "graficos": "RTX 2070",
+          "almacenamiento": "110 GB"
+        }
+      },
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/screenshot1.jpg",
+        "https://play-lh.googleusercontent.com/screenshot2.jpg"
+      ],
+      "tags": ["MOBA", "Mobile", "5v5", "Estrategia","Sports"]
+    },
+    {
+      "id": 17,
+      "nombre": "The Legend of Zelda: BOTW",
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg/250px-The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
+      "categoria": "adventure",
+      "desarrollador": "Nintendo EPD",
+      "fechaLanzamiento": "2016-07-14",
+      "descripcion": "videojuego de acción-aventura de 2017 de la serie The Legend of Zelda, desarrollado por la filial Nintendo EPD en colaboración con Monolith Soft y publicado por Nintendo para las consolas Wii U y Nintendo Switch.[",
+      "rating": 4.9,
+      "plataformas": ["Nintendo Switch"],
+      "precio": 59.99,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Android 4.1 / iOS 9.0",
+          "procesador": "SoC Nvidia Tegra",
+          "memoria": "4 GB RAM",
+          "graficos": "Nvidia Tegra",
+          "almacenamiento": "32 GB"
+        },
+        "recomendados": {
+          "os": "Android 7.0 / iOS 11.0",
+          "procesador": "SoC Nvidia Tegra",
+          "memoria": "4 GB RAM",
+          "graficos": "Nvidia Tegra",
+          "almacenamiento": "64 GB"
+        }
+      },
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/screenshot1.jpg",
+        "https://play-lh.googleusercontent.com/screenshot2.jpg"
+      ],
+      "tags": ["MOBA", "Mobile", "5v5", "Estrategia","Aventura"]
     }
   ],
   "categorias": [
+    {
+      "id": "adventure",
+      "nombre": "Adventure",
+      "icono": "bi-compass",
+      "descripcion": "Juegos de aventuras con narrativas epicas",
+      "color": "#9b59b6"
+    },
     {
       "id": "battle-royale",
       "nombre": "Battle Royale",
@@ -556,5 +632,4 @@
       "descripcion": "Juegos deportivos con simulación realista de diferentes disciplinas",
       "color": "#4ecdc4"
     }
-  ]
-}
+  ]}

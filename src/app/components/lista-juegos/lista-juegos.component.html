@@ -1,28 +1,41 @@
-<!-- Header de búsqueda -->
 <section class="search-header py-4 bg-darker">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
         <h1 class="subtitle-gaming mb-3">
           @if(categoriaSeleccionada) {
-            Juegos de {{categoriaSeleccionada}}
+          Juegos de {{categoriaSeleccionada}}
           } @else {
-            Todos los Juegos
+          Todos los Juegos
           }
         </h1>
         <div class="search-bar">
           <div class="input-group">
-            <input
-              type="text"
-              class="form-control input-gaming"
-              placeholder="Buscar juegos, desarrolladores o categorías..."
-              [(ngModel)]="terminoBusqueda"
+            <input type="text" class="form-control input-gaming"
+              placeholder="Buscar juegos, desarrolladores o categorías..." [(ngModel)]="terminoBusqueda"
               (keyup.enter)="buscar()">
             <button class="btn btn-gaming" type="button" (click)="buscar()">
               <i class="bi bi-search"></i>
             </button>
           </div>
         </div>
+
+        <div class="mb-4 card-gaming bg-blur p-3 animate-fadeIn">
+          <label for="ordenamiento" class="form-label text-light fw-semibold">
+            <i class="bi bi-sort-alpha-down me-2"></i>Ordenar por:
+          </label>
+          <select id="ordenamiento" class="form-select input-gaming" [(ngModel)]="criterioOrdenamiento"
+            (change)="aplicarOrdenamiento()">
+            <option value="">-- Selecciona un criterio --</option>
+            <option value="nombre-asc">Nombre: A-Z</option>
+            <option value="nombre-desc">Nombre: Z-A</option>
+            <option value="precio-asc">Precio: Menor a Mayor</option>
+            <option value="precio-desc">Precio: Mayor a Menor</option>
+            <option value="rating-desc">Rating: Mejor a Peor</option>
+          </select>
+        </div>
+
+
       </div>
       <div class="col-lg-4 d-flex align-items-end justify-content-lg-end">
         <div class="results-info">
@@ -35,11 +48,10 @@
   </div>
 </section>
 
-<!-- Contenido principal -->
 <section class="py-5">
   <div class="container">
     <div class="row">
-      <!-- Sidebar de filtros -->
+
       <div class="col-lg-3 mb-4">
         <div class="filters-sidebar">
           <div class="d-flex justify-content-between align-items-center mb-3">
@@ -51,49 +63,47 @@
           <app-filtros (filtrosChange)="onFiltrosChange($event)"></app-filtros>
         </div>
       </div>
-      
-      <!-- Lista de juegos -->
+
       <div class="col-lg-9">
         @if(juegosFiltrados$ | async; as juegos) {
-          @if(juegos.length > 0) {
-            <div class="row g-4">
-              @for(juego of juegos; track juego.id) {
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                  <app-tarjeta-juego [juego]="juego"></app-tarjeta-juego>
-                </div>
-              }
-            </div>
-          } @else {
-            <!-- Estado vacío -->
-            <div class="empty-state text-center py-5">
-              <div class="empty-icon mb-4">
-                <i class="bi bi-search text-secondary" style="font-size: 4rem;"></i>
-              </div>
-              <h3 class="text-secondary mb-3">No se encontraron juegos</h3>
-              <p class="text-secondary mb-4">
-                No hay juegos que coincidan con tus criterios de búsqueda.
-                Intenta ajustar los filtros o buscar algo diferente.
-              </p>
-              <button class="btn btn-gaming-outline" (click)="limpiarFiltros()">
-                <i class="bi bi-arrow-clockwise"></i> Limpiar filtros
-              </button>
-            </div>
-          }
-        } @else {
-          <!-- Estado de carga -->
-          <div class="loading-state text-center py-5">
-            <div class="spinner-border text-primary mb-3" role="status">
-              <span class="visually-hidden">Cargando...</span>
-            </div>
-            <p class="text-secondary">Cargando juegos...</p>
+        @if(juegos.length > 0) {
+        <div class="row g-4">
+          @for(juego of juegos; track juego.id) {
+          <div class="col-xl-4 col-lg-6 col-md-6">
+            <app-tarjeta-juego [juego]="juego"></app-tarjeta-juego>
           </div>
+          }
+        </div>
+        } @else {
+
+        <div class="empty-state text-center py-5">
+          <div class="empty-icon mb-4">
+            <i class="bi bi-search text-secondary" style="font-size: 4rem;"></i>
+          </div>
+          <h3 class="text-secondary mb-3">No se encontraron juegos</h3>
+          <p class="text-secondary mb-4">
+            No hay juegos que coincidan con tus criterios de búsqueda.
+            Intenta ajustar los filtros o buscar algo diferente.
+          </p>
+          <button class="btn btn-gaming-outline" (click)="limpiarFiltros()">
+            <i class="bi bi-arrow-clockwise"></i> Limpiar filtros
+          </button>
+        </div>
+        }
+        } @else {
+          
+        <div class="loading-state text-center py-5">
+          <div class="spinner-border text-primary mb-3" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+          <p class="text-secondary">Cargando juegos...</p>
+        </div>
         }
       </div>
     </div>
   </div>
 </section>
 
-<!-- Call to Action -->
 <section class="cta-section py-5 bg-darker">
   <div class="container">
     <div class="row justify-content-center text-center">

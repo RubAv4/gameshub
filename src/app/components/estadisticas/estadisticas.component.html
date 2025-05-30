@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <div class="card-gaming bg-blur animate-fadeIn">
+    <h2 class="title-gaming mb-3">
+      <i class="bi bi-bar-chart-line me-2"></i> Estadísticas
+    </h2>
+<!-- para los emoticones use combinacion de tacla win + . -->
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-blur text-light border-0">
+        🎮 <strong>Total de juegos:</strong> {{ totalJuegos }}
+      </li>
+      <li class="list-group-item bg-blur text-light border-0">
+        🆓 <strong>Juegos gratuitos:</strong> {{ juegosGratis }}
+      </li>
+      <li class="list-group-item bg-blur text-light border-0">
+        💰 <strong>Juegos de pago:</strong> {{ juegosPago }}
+      </li>
+      <li class="list-group-item bg-blur text-light border-0">
+        ⭐ <strong>Mejor juego:</strong> {{ mejorJuego?.nombre }} (Rating: {{ mejorJuego?.rating }})
+      </li>
+      <li class="list-group-item bg-blur text-light border-0">
+        💵 <strong>Promedio de precios:</strong> {{ promedioPrecio | currency:'PEN':'symbol':'1.2-2' }}
+      </li>
+    </ul>
+  </div>
+</div>
