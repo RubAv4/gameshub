@@ -1,0 +1,286 @@
+@if(juego$ | async; as juego) {
+  <!-- Header del juego -->
+  <section class="game-header">
+    <div class="game-bg" [style.background-image]="'url(' + juego.imagen + ')'"></div>
+    <div class="game-overlay"></div>
+    <div class="container">
+      <div class="row align-items-center min-vh-60">
+        <div class="col-lg-8">
+          <div class="game-info">
+            <button class="btn btn-gaming-outline mb-3" (click)="volver()">
+              <i class="bi bi-arrow-left"></i> Volver a Juegos
+            </button>
+            
+            <div class="game-badges mb-3">
+              <span class="badge-gaming secondary">{{juego.categoria}}</span>
+              @if(juego.esGratis) {
+                <span class="badge-gaming" style="background: var(--success-color); border-color: var(--success-color);">
+                  <i class="bi bi-star-fill"></i> GRATIS
+                </span>
+              }
+            </div>
+            
+            <h1 class="game-title mb-3">{{juego.nombre}}</h1>
+            
+            <div class="game-meta mb-4">
+              <div class="meta-item">
+                <i class="bi bi-building"></i>
+                <span>{{juego.desarrollador}}</span>
+              </div>
+              <div class="meta-item">
+                <i class="bi bi-calendar"></i>
+                <span>{{formatearFecha(juego.fechaLanzamiento)}}</span>
+              </div>
+              <div class="meta-item">
+                <div class="rating">
+                  @for(estrella of obtenerEstrellas(juego.rating); track $index) {
+                    <i class="bi" [class.bi-star-fill]="estrella === 1" [class.bi-star]="estrella === 0"></i>
+                  }
+                  <span class="ms-2">{{juego.rating}}/5</span>
+                </div>
+              </div>
+            </div>
+            
+            <p class="game-description mb-4">{{juego.descripcion}}</p>
+            
+            <div class="game-platforms mb-4">
+              <span class="platforms-label">Disponible en:</span>
+              @for(plataforma of juego.plataformas; track plataforma) {
+                <span class="platform-badge">
+                  @switch(plataforma) {
+                    @case('PC') { <i class="bi bi-pc-display"></i> }
+                    @case('PlayStation') { <i class="bi bi-playstation"></i> }
+                    @case('Xbox') { <i class="bi bi-xbox"></i> }
+                    @case('Nintendo Switch') { <i class="bi bi-nintendo-switch"></i> }
+                    @case('Mobile') { <i class="bi bi-phone"></i> }
+                  }
+                  {{plataforma}}
+                </span>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="game-card-detail">
+            <div class="image-container">
+              <img [src]="juego.imagen" [alt]="juego.nombre" class="game-image" loading="lazy">
+            </div>
+            <div class="game-price">
+              @if(juego.esGratis) {
+                <span class="price-free">Free to Play</span>
+              } @else {
+                <span class="price-value">${{juego.precio}}</span>
+              }
+            </div>
+            <div class="game-actions">
+              <button class="btn btn-gaming w-100 mb-2">
+                <i class="bi bi-download"></i> Descargar
+              </button>
+              <div class="action-buttons">
+                <button class="btn btn-gaming-outline">
+                  <i class="bi bi-heart"></i> Favoritos
+                </button>
+                <button class="btn btn-gaming-outline">
+                  <i class="bi bi-share"></i> Compartir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido con tabs -->
+  <section class="game-content py-5">
+    <div class="container">
+      <!-- Navegación de tabs -->
+      <div class="game-tabs mb-4">
+        <button 
+          class="tab-btn" 
+          [class.active]="tabActiva === 'info'"
+          (click)="cambiarTab('info')">
+          <i class="bi bi-info-circle"></i> Información
+        </button>
+        <button 
+          class="tab-btn" 
+          [class.active]="tabActiva === 'requisitos'"
+          (click)="cambiarTab('requisitos')">
+          <i class="bi bi-cpu"></i> Requisitos
+        </button>
+        <button 
+          class="tab-btn" 
+          [class.active]="tabActiva === 'screenshots'"
+          (click)="cambiarTab('screenshots')">
+          <i class="bi bi-images"></i> Capturas
+        </button>
+      </div>
+
+      <!-- Contenido de tabs -->
+      <div class="tab-content">
+        <!-- Tab Información -->
+        @if(tabActiva === 'info') {
+          <div class="tab-pane active">
+            <div class="row">
+              <div class="col-lg-8">
+                <h3 class="mb-4">Descripción</h3>
+                <p class="lead">{{juego.descripcion}}</p>
+                
+                <h4 class="mt-4 mb-3">Etiquetas</h4>
+                <div class="tags">
+                  @for(tag of juego.tags; track tag) {
+                    <span class="tag">{{tag}}</span>
+                  }
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="game-stats">
+                  <h4 class="mb-3">Detalles del Juego</h4>
+                  <div class="stat-row">
+                    <span class="stat-label">Desarrollador:</span>
+                    <span class="stat-value">{{juego.desarrollador}}</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">Categoría:</span>
+                    <span class="stat-value">{{juego.categoria}}</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">Lanzamiento:</span>
+                    <span class="stat-value">{{formatearFecha(juego.fechaLanzamiento)}}</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">Calificación:</span>
+                    <span class="stat-value">{{juego.rating}}/5 estrellas</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">Precio:</span>
+                    <span class="stat-value">
+                      {{juego.esGratis ? 'Gratis' : '$' + juego.precio}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Tab Requisitos -->
+        @if(tabActiva === 'requisitos') {
+          <div class="tab-pane active">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="requirements-card">
+                  <h4 class="requirements-title">
+                    <i class="bi bi-pc text-warning"></i>
+                    Requisitos Mínimos
+                  </h4>
+                  <div class="requirement-row">
+                    <span class="req-label">Sistema Operativo:</span>
+                    <span class="req-value">{{juego.requisitos.minimos.os}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Procesador:</span>
+                    <span class="req-value">{{juego.requisitos.minimos.procesador}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Memoria:</span>
+                    <span class="req-value">{{juego.requisitos.minimos.memoria}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Gráficos:</span>
+                    <span class="req-value">{{juego.requisitos.minimos.graficos}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Almacenamiento:</span>
+                    <span class="req-value">{{juego.requisitos.minimos.almacenamiento}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="requirements-card recommended">
+                  <h4 class="requirements-title">
+                    <i class="bi bi-pc text-success"></i>
+                    Requisitos Recomendados
+                  </h4>
+                  <div class="requirement-row">
+                    <span class="req-label">Sistema Operativo:</span>
+                    <span class="req-value">{{juego.requisitos.recomendados.os}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Procesador:</span>
+                    <span class="req-value">{{juego.requisitos.recomendados.procesador}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Memoria:</span>
+                    <span class="req-value">{{juego.requisitos.recomendados.memoria}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Gráficos:</span>
+                    <span class="req-value">{{juego.requisitos.recomendados.graficos}}</span>
+                  </div>
+                  <div class="requirement-row">
+                    <span class="req-label">Almacenamiento:</span>
+                    <span class="req-value">{{juego.requisitos.recomendados.almacenamiento}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Tab Screenshots -->
+        @if(tabActiva === 'screenshots') {
+          <div class="tab-pane active">
+            <div class="screenshots-grid">
+              @for(screenshot of juego.screenshots; track screenshot) {
+                <div class="screenshot-item">
+                  <img [src]="screenshot" [alt]="'Screenshot de ' + juego.nombre" class="screenshot-img" loading="lazy">
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Juegos Similares -->
+  @if(juegosSimilares$ | async; as similares) {
+    <section class="py-5 bg-darker">
+      <div class="container">
+        <h3 class="subtitle-gaming mb-4">Juegos Similares</h3>
+        <div class="row g-4">
+          @for(similar of similares.slice(0, 3); track similar.id) {
+            @if(similar.id !== juego.id) {
+              <div class="col-lg-4">
+                <a [routerLink]="['/juego', similar.id]" class="similar-game-card">
+                  <div class="image-container">
+                    <img [src]="similar.imagen" [alt]="similar.nombre" class="similar-img" loading="lazy">
+                  </div>
+                  <div class="similar-content">
+                    <h5>{{similar.nombre}}</h5>
+                    <p class="text-secondary">{{similar.desarrollador}}</p>
+                    <div class="rating">
+                      @for(estrella of obtenerEstrellas(similar.rating); track $index) {
+                        <i class="bi" [class.bi-star-fill]="estrella === 1" [class.bi-star]="estrella === 0"></i>
+                      }
+                      <span class="ms-2">{{similar.rating}}</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    </section>
+  }
+} @else {
+  <!-- Estado de carga -->
+  <div class="loading-state text-center py-5">
+    <div class="spinner-border text-primary mb-3" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+    <p class="text-secondary">Cargando detalles del juego...</p>
+  </div>
+}

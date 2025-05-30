@@ -1,0 +1,164 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-background"></div>
+  <div class="container">
+    <div class="row align-items-center min-vh-50">
+      <div class="col-lg-6">
+        <div class="hero-content animate-fadeIn">
+          <h1 class="title-gaming mb-4">
+            Tu Portal Gaming <br>
+            <span class="text-gradient">Definitivo</span>
+          </h1>
+          <p class="lead text-secondary mb-4">
+            Descubre los mejores videojuegos, desde épicos Battle Royale hasta increíbles mundos de Sandbox. 
+            Tu próxima aventura te está esperando.
+          </p>
+          <div class="hero-actions">
+            <a routerLink="/juegos" class="btn btn-gaming btn-lg me-3">
+              <i class="bi bi-collection"></i> Explorar Juegos
+            </a>
+            <a routerLink="/categorias" class="btn btn-gaming-outline btn-lg">
+              <i class="bi bi-grid-3x3-gap"></i> Ver Categorías
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-stats">
+          <div class="stats-grid">
+            <div class="stat-card animate-pulse">
+              <div class="stat-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="stat-number">{{estadisticas.jugadoresActivos}}</div>
+              <div class="stat-label">Jugadores Activos</div>
+            </div>
+            <div class="stat-card animate-pulse">
+              <div class="stat-icon">
+                <i class="bi bi-controller"></i>
+              </div>
+              <div class="stat-number">{{estadisticas.juegosDisponibles}}</div>
+              <div class="stat-label">Juegos Disponibles</div>
+            </div>
+            <div class="stat-card animate-pulse">
+              <div class="stat-icon">
+                <i class="bi bi-trophy-fill"></i>
+              </div>
+              <div class="stat-number">{{estadisticas.torneos}}</div>
+              <div class="stat-label">Torneos Activos</div>
+            </div>
+            <div class="stat-card animate-pulse">
+              <div class="stat-icon">
+                <i class="bi bi-cash-stack"></i>
+              </div>
+              <div class="stat-number">{{estadisticas.premios}}</div>
+              <div class="stat-label">En Premios</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categorías Principales -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="subtitle-gaming">Explora por Categorías</h2>
+      <p class="text-secondary">Encuentra tu género gaming favorito</p>
+    </div>
+    
+    <div class="row g-4">
+      @if(categoriasPrincipales$ | async; as categorias) {
+        @for(categoria of categorias; track categoria.id) {
+          <div class="col-lg-3 col-md-6">
+            <a [routerLink]="['/categoria', categoria.id]" class="category-card">
+              <div class="category-icon" [style.color]="categoria.color">
+                <i class="bi" [class]="categoria.icono"></i>
+              </div>
+              <h5>{{categoria.nombre}}</h5>
+              <p>{{categoria.descripcion}}</p>
+              <div class="category-arrow">
+                <i class="bi bi-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+        }
+      }
+    </div>
+    
+    <div class="text-center mt-4">
+      <a routerLink="/categorias" class="btn btn-gaming-outline">
+        Ver Todas las Categorías <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Juegos Populares -->
+<section class="py-5 bg-darker">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <div>
+        <h2 class="subtitle-gaming">Más Populares</h2>
+        <p class="text-secondary">Los juegos mejor valorados por la comunidad</p>
+      </div>
+      <a routerLink="/juegos" class="btn btn-gaming-outline">
+        Ver Todos <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+    
+    <div class="row g-4">
+      @if(juegosPopulares$ | async; as juegos) {
+        @for(juego of juegos; track juego.id) {
+          <div class="col-lg-4 col-md-6">
+            <app-tarjeta-juego [juego]="juego"></app-tarjeta-juego>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Juegos Recientes -->
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <div>
+        <h2 class="subtitle-gaming">Últimos Lanzamientos</h2>
+        <p class="text-secondary">Lo más nuevo en el mundo gaming</p>
+      </div>
+      <a routerLink="/juegos" class="btn btn-gaming-outline">
+        Ver Todos <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+    
+    <div class="row g-4">
+      @if(juegosRecientes$ | async; as juegos) {
+        @for(juego of juegos; track juego.id) {
+          <div class="col-lg-4 col-md-6">
+            <app-tarjeta-juego [juego]="juego"></app-tarjeta-juego>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="title-gaming mb-4">¿Listo para la Aventura?</h2>
+        <p class="lead text-secondary mb-4">
+          Únete a millones de gamers y descubre tu próximo juego favorito en GameHub
+        </p>
+        <a routerLink="/juegos" class="btn btn-gaming btn-lg animate-glow">
+          <i class="bi bi-rocket-takeoff"></i> Comenzar Ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

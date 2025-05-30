@@ -1,0 +1,51 @@
+<div class="card-gaming h-100 animate-fadeIn">
+  <div class="card-header-gaming">
+    <img [src]="juego.imagen" [alt]="juego.nombre" class="card-img-gaming">
+    <div class="card-overlay">
+      <span class="badge-gaming secondary">{{juego.categoria}}</span>
+    </div>
+    @if(juego.esGratis) {
+      <div class="free-badge">
+        <i class="bi bi-star-fill"></i> GRATIS
+      </div>
+    }
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{juego.nombre}}</h5>
+    <p class="card-developer text-secondary mb-2">
+      <i class="bi bi-building"></i> {{juego.desarrollador}}
+    </p>
+    <div class="rating mb-2">
+      @for(estrella of obtenerEstrellas(); track $index) {
+        <i class="bi" [class.bi-star-fill]="estrella === 1" [class.bi-star]="estrella === 0"></i>
+      }
+      <span class="ms-2">{{juego.rating}}</span>
+    </div>
+    <div class="platforms mb-3">
+      @for(plataforma of juego.plataformas.slice(0, 3); track plataforma) {
+        <span class="platform-icon" [title]="plataforma">
+          @switch(plataforma) {
+            @case('PC') { <i class="bi bi-pc-display"></i> }
+            @case('PlayStation') { <i class="bi bi-playstation"></i> }
+            @case('Xbox') { <i class="bi bi-xbox"></i> }
+            @case('Nintendo Switch') { <i class="bi bi-nintendo-switch"></i> }
+            @case('Mobile') { <i class="bi bi-phone"></i> }
+          }
+        </span>
+      }
+      @if(juego.plataformas.length > 3) {
+        <span class="platform-more">+{{juego.plataformas.length - 3}}</span>
+      }
+    </div>
+    <div class="card-footer-gaming">
+      @if(!juego.esGratis) {
+        <div class="price">${{juego.precio}}</div>
+      } @else {
+        <div class="price free">Free to Play</div>
+      }
+      <a [routerLink]="['/juego', juego.id]" class="btn btn-gaming-outline btn-sm">
+        Ver más <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>

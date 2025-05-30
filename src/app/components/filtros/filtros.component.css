@@ -1,0 +1,146 @@
+.filter-section {
+  border-bottom: 1px solid rgba(107, 70, 193, 0.2);
+  padding-bottom: 1rem;
+}
+
+.filter-title {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(107, 70, 193, 0.3);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.filter-btn:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  background: rgba(0, 217, 255, 0.1);
+}
+
+.filter-btn.active {
+  background: var(--secondary-color);
+  color: var(--dark-bg);
+  border-color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.rating-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rating-btn {
+  background: transparent;
+  border: 1px solid rgba(107, 70, 193, 0.3);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rating-btn:hover {
+  border-color: var(--warning-color);
+  color: var(--warning-color);
+  background: rgba(255, 183, 0, 0.1);
+}
+
+.rating-btn.active {
+  background: var(--warning-color);
+  color: var(--dark-bg);
+  border-color: var(--warning-color);
+  font-weight: 600;
+}
+
+.rating-btn i {
+  font-size: 0.75rem;
+  margin-right: 1px;
+}
+
+.active-filters {
+  background: var(--card-bg);
+  border: 1px solid rgba(107, 70, 193, 0.2);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-tag {
+  background: var(--primary-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-tag button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
+}
+
+.filter-tag button:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .filter-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    flex: 1;
+    min-width: fit-content;
+  }
+  
+  .rating-filter {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .rating-btn {
+    flex: 1;
+    min-width: fit-content;
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+}

@@ -1,0 +1,122 @@
+<!-- Filtro por Categoría -->
+<div class="filter-section mb-4">
+  <h6 class="filter-title text-uppercase mb-3">
+    <i class="bi bi-grid-3x3-gap me-2"></i>Categorías
+  </h6>
+  <div class="filter-options">
+    @for(categoria of categorias; track categoria.id) {
+      <button
+        class="filter-btn"
+        [class.active]="filtros.categoria === categoria.nombre"
+        (click)="onCategoriaChange(categoria.nombre)">
+        {{categoria.nombre}}
+      </button>
+    }
+  </div>
+</div>
+
+<!-- Filtro por Plataforma -->
+<div class="filter-section mb-4">
+  <h6 class="filter-title text-uppercase mb-3">
+    <i class="bi bi-controller me-2"></i>Plataformas
+  </h6>
+  <div class="filter-options">
+    @for(plataforma of plataformas; track plataforma) {
+      <button
+        class="filter-btn"
+        [class.active]="filtros.plataforma === plataforma"
+        (click)="onPlataformaChange(plataforma)">
+        @switch(plataforma) {
+          @case('PC') { <i class="bi bi-pc-display me-1"></i> }
+          @case('PlayStation') { <i class="bi bi-playstation me-1"></i> }
+          @case('Xbox') { <i class="bi bi-xbox me-1"></i> }
+          @case('Nintendo Switch') { <i class="bi bi-nintendo-switch me-1"></i> }
+          @case('Mobile') { <i class="bi bi-phone me-1"></i> }
+        }
+        {{plataforma}}
+      </button>
+    }
+  </div>
+</div>
+
+<!-- Filtro por Precio -->
+<div class="filter-section mb-4">
+  <h6 class="filter-title text-uppercase mb-3">
+    <i class="bi bi-cash-stack me-2"></i>Precio
+  </h6>
+  <div class="filter-options">
+    <button
+      class="filter-btn"
+      [class.active]="filtros.precio === 'gratis'"
+      (click)="onPrecioChange('gratis')">
+      <i class="bi bi-star-fill me-1"></i>Gratis
+    </button>
+    <button
+      class="filter-btn"
+      [class.active]="filtros.precio === 'pago'"
+      (click)="onPrecioChange('pago')">
+      <i class="bi bi-credit-card me-1"></i>De Pago
+    </button>
+  </div>
+</div>
+
+<!-- Filtro por Rating -->
+<div class="filter-section mb-4">
+  <h6 class="filter-title text-uppercase mb-3">
+    <i class="bi bi-star me-2"></i>Calificación Mínima
+  </h6>
+  <div class="rating-filter">
+    @for(rating of [4, 3, 2, 1]; track rating) {
+      <button
+        class="rating-btn"
+        [class.active]="filtros.rating === rating"
+        (click)="onRatingChange(rating)">
+        @for(star of [1,2,3,4,5]; track star) {
+          <i class="bi" [class.bi-star-fill]="star <= rating" [class.bi-star]="star > rating"></i>
+        }
+        <span class="ms-2">{{rating}}+ estrellas</span>
+      </button>
+    }
+  </div>
+</div>
+
+<!-- Filtros activos -->
+@if(filtros.categoria || filtros.plataforma || filtros.precio || filtros.rating > 0) {
+  <div class="active-filters">
+    <h6 class="filter-title text-uppercase mb-3">Filtros Activos</h6>
+    <div class="filter-tags">
+      @if(filtros.categoria) {
+        <span class="filter-tag">
+          {{filtros.categoria}}
+          <button type="button" (click)="onCategoriaChange(filtros.categoria)">
+            <i class="bi bi-x"></i>
+          </button>
+        </span>
+      }
+      @if(filtros.plataforma) {
+        <span class="filter-tag">
+          {{filtros.plataforma}}
+          <button type="button" (click)="onPlataformaChange(filtros.plataforma)">
+            <i class="bi bi-x"></i>
+          </button>
+        </span>
+      }
+      @if(filtros.precio) {
+        <span class="filter-tag">
+          {{filtros.precio === 'gratis' ? 'Gratis' : 'De Pago'}}
+          <button type="button" (click)="onPrecioChange(filtros.precio)">
+            <i class="bi bi-x"></i>
+          </button>
+        </span>
+      }
+      @if(filtros.rating > 0) {
+        <span class="filter-tag">
+          {{filtros.rating}}+ estrellas
+          <button type="button" (click)="onRatingChange(filtros.rating)">
+            <i class="bi bi-x"></i>
+          </button>
+        </span>
+      }
+    </div>
+  </div>
+}

@@ -1,0 +1,560 @@
+{
+  "juegos": [
+    {
+      "id": 1,
+      "nombre": "Fortnite",
+      "imagen": "https://cdn2.unrealengine.com/fortnite-og-social-share-1920x1080-685342852.jpg",
+      "categoria": "Battle Royale",
+      "desarrollador": "Epic Games",
+      "fechaLanzamiento": "2017-07-25",
+      "descripcion": "Fortnite es un juego de supervivencia donde 100 jugadores luchan entre sí en combate jugador contra jugador para ser el último en pie.",
+      "rating": 4.5,
+      "plataformas": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Mobile"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7/8/10 64-bit",
+          "procesador": "Core i3-3225 3.3 GHz",
+          "memoria": "4 GB RAM",
+          "graficos": "Intel HD 4000",
+          "almacenamiento": "20 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Core i5-7300U 3.5 GHz",
+          "memoria": "8 GB RAM",
+          "graficos": "Nvidia GTX 960",
+          "almacenamiento": "20 GB"
+        }
+      },
+      "screenshots": [
+        "https://cdn2.unrealengine.com/fortnite-screen-01-1920x1080-685342852.jpg",
+        "https://cdn2.unrealengine.com/fortnite-screen-02-1920x1080-685342852.jpg"
+      ],
+      "trailer": "https://www.youtube.com/watch?v=WJW-bzXZM8M",
+      "tags": ["Multijugador", "Online", "Construcción", "Supervivencia"]
+    },
+    {
+      "id": 2,
+      "nombre": "Minecraft",
+      "imagen": "https://image.api.playstation.com/vulcan/img/cfn/11307x4B5WLoVoIUtdewG4uJ_YuDRTwBxQy0qP8ylgazLLc01PBxbsFG1pGOWmqhZsxnNkrU3GXbdXIowBAstzlrhtQ4LCI4.png",
+      "categoria": "Sandbox",
+      "desarrollador": "Mojang Studios",
+      "fechaLanzamiento": "2011-11-18",
+      "descripcion": "Minecraft es un juego de construcción tipo sandbox donde los jugadores pueden explorar un mundo generado proceduralmente y construir estructuras asombrosas.",
+      "rating": 4.8,
+      "plataformas": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Mobile"],
+      "precio": 26.95,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7",
+          "procesador": "Intel Core i3-3210",
+          "memoria": "2 GB RAM",
+          "graficos": "Intel HD Graphics 4000",
+          "almacenamiento": "1 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10",
+          "procesador": "Intel Core i5-4690",
+          "memoria": "8 GB RAM",
+          "graficos": "GeForce 700 Series",
+          "almacenamiento": "4 GB"
+        }
+      },
+      "screenshots": [
+        "https://www.minecraft.net/content/dam/games/minecraft/screenshots/screenshot1.jpg",
+        "https://www.minecraft.net/content/dam/games/minecraft/screenshots/screenshot2.jpg"
+      ],
+      "tags": ["Creatividad", "Supervivencia", "Multijugador", "Mundo Abierto"]
+    },
+    {
+      "id": 3,
+      "nombre": "League of Legends",
+      "imagen": "https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/EGS_LeagueofLegends_RiotGames_S1_2560x1440-872a966297484acd0efe49f34edd5aed",
+      "categoria": "MOBA",
+      "desarrollador": "Riot Games",
+      "fechaLanzamiento": "2009-10-27",
+      "descripcion": "League of Legends es un juego de estrategia donde dos equipos de cinco campeones poderosos se enfrentan para destruir la base del otro.",
+      "rating": 4.3,
+      "plataformas": ["PC"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7/8/10",
+          "procesador": "3 GHz processor",
+          "memoria": "2 GB RAM",
+          "graficos": "Shader version 2.0",
+          "almacenamiento": "12 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10",
+          "procesador": "3 GHz dual-core",
+          "memoria": "4 GB RAM",
+          "graficos": "Nvidia GeForce 8800",
+          "almacenamiento": "16 GB"
+        }
+      },
+      "screenshots": [
+        "https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt3e0c3c0d5b0f0e8f/5f7f8b5d5f1b3d10ab7d3e89/01_Worlds2020.jpg",
+        "https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt8f8c3c0d5b0f0e8f/5f7f8b5d5f1b3d10ab7d3e89/02_Gameplay.jpg"
+      ],
+      "trailer": "https://www.youtube.com/watch?v=7O21Z6vgtmg",
+      "tags": ["Competitivo", "Estrategia", "Multijugador", "eSports"]
+    },
+    {
+      "id": 4,
+      "nombre": "Valorant",
+      "imagen": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt3f072336e3f3ade4/63096d7be4a8c30e088e7720/Valorant_2022_E5A2_PlayVALORANT_ContentStackThumbnail_1200x625_MB01.png",
+      "categoria": "FPS",
+      "desarrollador": "Riot Games",
+      "fechaLanzamiento": "2020-06-02",
+      "descripcion": "Valorant es un shooter táctico 5v5 basado en personajes donde la precisión y la estrategia son clave para la victoria.",
+      "rating": 4.4,
+      "plataformas": ["PC"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7/8/10 64-bit",
+          "procesador": "Intel Core 2 Duo E8400",
+          "memoria": "4 GB RAM",
+          "graficos": "Intel HD 4000",
+          "almacenamiento": "20 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel i3-4150",
+          "memoria": "8 GB RAM",
+          "graficos": "GeForce GT 730",
+          "almacenamiento": "20 GB"
+        }
+      },
+      "screenshots": [
+        "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt5e9e7e7e7e7e7e7e/valorant-screenshot-1.jpg",
+        "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6e7e7e7e7e7e7e7e/valorant-screenshot-2.jpg"
+      ],
+      "tags": ["Competitivo", "Táctico", "Multijugador", "eSports"]
+    },
+    {
+      "id": 5,
+      "nombre": "Genshin Impact",
+      "imagen": "https://genshin.hoyoverse.com/_nuxt/img/home-poster-5th.59eb9e9.jpg",
+      "categoria": "RPG",
+      "desarrollador": "miHoYo",
+      "fechaLanzamiento": "2020-09-28",
+      "descripcion": "Genshin Impact es un juego de rol de acción de mundo abierto, donde exploras el vasto mundo de Teyvat.",
+      "rating": 4.6,
+      "plataformas": ["PC", "PlayStation", "Mobile"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7 SP1 64-bit",
+          "procesador": "Intel Core i5",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GT 1030",
+          "almacenamiento": "30 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i7",
+          "memoria": "16 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 1060",
+          "almacenamiento": "30 GB"
+        }
+      },
+      "screenshots": [
+        "https://genshin.hoyoverse.com/content/media/image/screenshot1.jpg",
+        "https://genshin.hoyoverse.com/content/media/image/screenshot2.jpg"
+      ],
+      "tags": ["Aventura", "Anime", "Mundo Abierto", "Gacha"]
+    },
+    {
+      "id": 6,
+      "nombre": "FIFA 24",
+      "imagen": "https://media.contentapi.ea.com/content/dam/ea/fc/fc-24/images/2023/07/fc24-ultimate-edition-standard-kylian-mbappe.jpg.adapt.crop16x9.1455w.jpg",
+      "categoria": "Sports",
+      "desarrollador": "EA Sports",
+      "fechaLanzamiento": "2023-09-29",
+      "descripcion": "EA SPORTS FC 24 es el juego de fútbol más realista con HyperMotionV, PlayStyles optimizados y el motor Frostbite mejorado.",
+      "rating": 4.2,
+      "plataformas": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "precio": 69.99,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i5-6600K",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GTX 1050 Ti",
+          "almacenamiento": "100 GB"
+        },
+        "recomendados": {
+          "os": "Windows 11 64-bit",
+          "procesador": "Intel Core i7-6700",
+          "memoria": "12 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 1660",
+          "almacenamiento": "100 GB"
+        }
+      },
+      "screenshots": [
+        "https://media.contentapi.ea.com/content/dam/ea/fc/fc-24/screenshots/screenshot1.jpg",
+        "https://media.contentapi.ea.com/content/dam/ea/fc/fc-24/screenshots/screenshot2.jpg"
+      ],
+      "tags": ["Fútbol", "Deportes", "Multijugador", "Simulación"]
+    },
+    {
+      "id": 7,
+      "nombre": "Free Fire",
+      "imagen": "https://ffwebsite.garena.com/id/wp-content/uploads/sites/12/2021/12/thumb.jpg",
+      "categoria": "Battle Royale",
+      "desarrollador": "Garena",
+      "fechaLanzamiento": "2017-12-08",
+      "descripcion": "Free Fire es un juego de supervivencia shooter donde 50 jugadores luchan en una isla remota por sobrevivir.",
+      "rating": 4.1,
+      "plataformas": ["Mobile"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Android 4.1 / iOS 8.0",
+          "procesador": "Mediatek MT6737M",
+          "memoria": "1 GB RAM",
+          "graficos": "Mali-400",
+          "almacenamiento": "1.5 GB"
+        },
+        "recomendados": {
+          "os": "Android 6.0 / iOS 11.0",
+          "procesador": "Snapdragon 665",
+          "memoria": "4 GB RAM",
+          "graficos": "Adreno 610",
+          "almacenamiento": "4 GB"
+        }
+      },
+      "screenshots": [
+        "https://ffwebsite.garena.com/screenshots/screenshot1.jpg",
+        "https://ffwebsite.garena.com/screenshots/screenshot2.jpg"
+      ],
+      "tags": ["Mobile", "Battle Royale", "Supervivencia", "Shooter"]
+    },
+    {
+      "id": 8,
+      "nombre": "Roblox",
+      "imagen": "https://images.rbxcdn.com/d66ae37d46e00a1ecacfe9531986690a.jpg",
+      "categoria": "Sandbox",
+      "desarrollador": "Roblox Corporation",
+      "fechaLanzamiento": "2006-09-01",
+      "descripcion": "Roblox es una plataforma global donde millones de personas se reúnen todos los días para imaginar, crear y compartir experiencias.",
+      "rating": 4.4,
+      "plataformas": ["PC", "Mobile", "Xbox"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7",
+          "procesador": "1.6 GHz",
+          "memoria": "1 GB RAM",
+          "graficos": "DirectX 9",
+          "almacenamiento": "20 MB"
+        },
+        "recomendados": {
+          "os": "Windows 10",
+          "procesador": "2.0 GHz",
+          "memoria": "4 GB RAM",
+          "graficos": "DirectX 10",
+          "almacenamiento": "20 MB"
+        }
+      },
+      "screenshots": [
+        "https://images.rbxcdn.com/screenshot1.jpg",
+        "https://images.rbxcdn.com/screenshot2.jpg"
+      ],
+      "tags": ["Creatividad", "Social", "Multijugador", "Plataforma"]
+    },
+    {
+      "id": 9,
+      "nombre": "Counter-Strike 2",
+      "imagen": "https://cdn.cloudflare.steamstatic.com/apps/csgo/images/csgo_react/cs2/header.png",
+      "categoria": "FPS",
+      "desarrollador": "Valve",
+      "fechaLanzamiento": "2023-09-27",
+      "descripcion": "Counter-Strike 2 es la mayor actualización técnica en la historia de Counter-Strike con gráficos mejorados y nuevas mecánicas.",
+      "rating": 4.7,
+      "plataformas": ["PC"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 10",
+          "procesador": "Intel Core i5-750",
+          "memoria": "8 GB RAM",
+          "graficos": "GTX 1050",
+          "almacenamiento": "85 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10",
+          "procesador": "Intel Core i7-9700K",
+          "memoria": "16 GB RAM",
+          "graficos": "RTX 2070",
+          "almacenamiento": "85 GB"
+        }
+      },
+      "screenshots": [
+        "https://cdn.cloudflare.steamstatic.com/apps/csgo/images/screenshot1.jpg",
+        "https://cdn.cloudflare.steamstatic.com/apps/csgo/images/screenshot2.jpg"
+      ],
+      "tags": ["Competitivo", "Táctico", "eSports", "Clásico"]
+    },
+    {
+      "id": 10,
+      "nombre": "Apex Legends",
+      "imagen": "https://media.contentapi.ea.com/content/dam/apex-legends/common/articles/apex-legends-ignite-launch/apex-section-bg-xl.jpg.adapt.1920w.jpg",
+      "categoria": "Battle Royale",
+      "desarrollador": "Respawn Entertainment",
+      "fechaLanzamiento": "2019-02-04",
+      "descripcion": "Apex Legends es un juego gratuito de disparos Battle Royale donde personajes legendarios luchan por gloria, fama y fortuna.",
+      "rating": 4.5,
+      "plataformas": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7 64-bit",
+          "procesador": "Intel Core i3-6300",
+          "memoria": "6 GB RAM",
+          "graficos": "NVIDIA GeForce GT 640",
+          "almacenamiento": "56 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel i5 3570K",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 970",
+          "almacenamiento": "56 GB"
+        }
+      },
+      "screenshots": [
+        "https://media.contentapi.ea.com/content/dam/apex-legends/screenshot1.jpg",
+        "https://media.contentapi.ea.com/content/dam/apex-legends/screenshot2.jpg"
+      ],
+      "tags": ["Heroes", "Battle Royale", "Shooter", "Equipo"]
+    },
+    {
+      "id": 11,
+      "nombre": "PUBG Mobile",
+      "imagen": "https://www.pubgmobile.com/images/event/home/pubgm_home_bg.jpg",
+      "categoria": "Battle Royale",
+      "desarrollador": "PUBG Corporation",
+      "fechaLanzamiento": "2018-03-19",
+      "descripcion": "PUBG MOBILE ofrece la experiencia Battle Royale más intensa en tu móvil. Únete a la batalla y sé el último superviviente.",
+      "rating": 4.3,
+      "plataformas": ["Mobile"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Android 5.1.1 / iOS 9.0",
+          "procesador": "Snapdragon 430",
+          "memoria": "2 GB RAM",
+          "graficos": "Adreno 505",
+          "almacenamiento": "2 GB"
+        },
+        "recomendados": {
+          "os": "Android 8.0 / iOS 11.0",
+          "procesador": "Snapdragon 660",
+          "memoria": "4 GB RAM",
+          "graficos": "Adreno 512",
+          "almacenamiento": "4 GB"
+        }
+      },
+      "screenshots": [
+        "https://www.pubgmobile.com/images/screenshot1.jpg",
+        "https://www.pubgmobile.com/images/screenshot2.jpg"
+      ],
+      "tags": ["Mobile", "Battle Royale", "Supervivencia", "Realista"]
+    },
+    {
+      "id": 12,
+      "nombre": "Call of Duty: Warzone",
+      "imagen": "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mw-wz/WZ-Season-Three-Announce-TOUT.jpg",
+      "categoria": "Battle Royale",
+      "desarrollador": "Infinity Ward",
+      "fechaLanzamiento": "2020-03-10",
+      "descripcion": "Call of Duty: Warzone es un juego gratuito de Battle Royale con combate masivo, vehículos y una experiencia de juego intensa.",
+      "rating": 4.4,
+      "plataformas": ["PC", "PlayStation", "Xbox"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i3-4340",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 670",
+          "almacenamiento": "175 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i5-2500K",
+          "memoria": "12 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 970",
+          "almacenamiento": "175 GB"
+        }
+      },
+      "screenshots": [
+        "https://www.callofduty.com/content/dam/warzone/screenshot1.jpg",
+        "https://www.callofduty.com/content/dam/warzone/screenshot2.jpg"
+      ],
+      "tags": ["Battle Royale", "Acción", "Shooter", "Guerra"]
+    },
+    {
+      "id": 13,
+      "nombre": "Dota 2",
+      "imagen": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota2_social.jpg",
+      "categoria": "MOBA",
+      "desarrollador": "Valve",
+      "fechaLanzamiento": "2013-07-06",
+      "descripcion": "Dota 2 es un juego de estrategia multijugador donde dos equipos de cinco jugadores luchan para destruir la estructura enemiga.",
+      "rating": 4.2,
+      "plataformas": ["PC"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 7",
+          "procesador": "Dual core 2.8 GHz",
+          "memoria": "4 GB RAM",
+          "graficos": "NVIDIA GeForce 8600",
+          "almacenamiento": "15 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10",
+          "procesador": "Intel Core i5",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 1060",
+          "almacenamiento": "20 GB"
+        }
+      },
+      "screenshots": [
+        "https://cdn.cloudflare.steamstatic.com/apps/dota2/screenshot1.jpg",
+        "https://cdn.cloudflare.steamstatic.com/apps/dota2/screenshot2.jpg"
+      ],
+      "tags": ["MOBA", "Estrategia", "Competitivo", "eSports"]
+    },
+    {
+      "id": 14,
+      "nombre": "NBA 2K24",
+      "imagen": "https://nba2k24.2k.com/assets/images/nba2k24-kobe-bg.jpg",
+      "categoria": "Sports",
+      "desarrollador": "Visual Concepts",
+      "fechaLanzamiento": "2023-09-08",
+      "descripcion": "NBA 2K24 presenta a Kobe Bryant mientras redefine lo que significa Mamba Mentality con innovación y autenticidad.",
+      "rating": 4.0,
+      "plataformas": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "precio": 59.99,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i3-2100",
+          "memoria": "4 GB RAM",
+          "graficos": "NVIDIA GeForce GT 450",
+          "almacenamiento": "110 GB"
+        },
+        "recomendados": {
+          "os": "Windows 11 64-bit",
+          "procesador": "Intel Core i5-4430",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 770",
+          "almacenamiento": "110 GB"
+        }
+      },
+      "screenshots": [
+        "https://nba2k24.2k.com/assets/images/screenshot1.jpg",
+        "https://nba2k24.2k.com/assets/images/screenshot2.jpg"
+      ],
+      "tags": ["Baloncesto", "Deportes", "Simulación", "MyCAREER"]
+    },
+    {
+      "id": 15,
+      "nombre": "Mobile Legends",
+      "imagen": "https://play-lh.googleusercontent.com/Qxcg8RNAS9l_VUxHNPifSKHq0FRCPaVZCETd1jUPxFPf0fBBKEEtQZsJx2fH-K1yFg",
+      "categoria": "MOBA",
+      "desarrollador": "Moonton",
+      "fechaLanzamiento": "2016-07-14",
+      "descripcion": "Mobile Legends: Bang Bang es un MOBA móvil donde dos equipos de 5 jugadores luchan en tiempo real por la victoria.",
+      "rating": 4.3,
+      "plataformas": ["Mobile"],
+      "precio": 0,
+      "esGratis": true,
+      "requisitos": {
+        "minimos": {
+          "os": "Android 4.1 / iOS 9.0",
+          "procesador": "Qualcomm Snapdragon 410",
+          "memoria": "1.5 GB RAM",
+          "graficos": "Adreno 306",
+          "almacenamiento": "1 GB"
+        },
+        "recomendados": {
+          "os": "Android 7.0 / iOS 11.0",
+          "procesador": "Snapdragon 625",
+          "memoria": "3 GB RAM",
+          "graficos": "Adreno 506",
+          "almacenamiento": "2 GB"
+        }
+      },
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/screenshot1.jpg",
+        "https://play-lh.googleusercontent.com/screenshot2.jpg"
+      ],
+      "tags": ["MOBA", "Mobile", "5v5", "Estrategia"]
+    }
+  ],
+  "categorias": [
+    {
+      "id": "battle-royale",
+      "nombre": "Battle Royale",
+      "icono": "bi-bullseye",
+      "descripcion": "Juegos de supervivencia donde múltiples jugadores luchan hasta que quede uno en pie",
+      "color": "#ff006e"
+    },
+    {
+      "id": "sandbox",
+      "nombre": "Sandbox",
+      "icono": "bi-box",
+      "descripcion": "Juegos de mundo abierto donde puedes crear y explorar libremente",
+      "color": "#00d9ff"
+    },
+    {
+      "id": "moba",
+      "nombre": "MOBA",
+      "icono": "bi-diagram-3",
+      "descripcion": "Juegos de arena de batalla multijugador online con estrategia en tiempo real",
+      "color": "#6b46c1"
+    },
+    {
+      "id": "fps",
+      "nombre": "FPS",
+      "icono": "bi-crosshair",
+      "descripcion": "Juegos de disparos en primera persona con acción intensa",
+      "color": "#00f593"
+    },
+    {
+      "id": "rpg",
+      "nombre": "RPG",
+      "icono": "bi-person-badge",
+      "descripcion": "Juegos de rol donde desarrollas personajes en mundos fantásticos",
+      "color": "#ffb700"
+    },
+    {
+      "id": "sports",
+      "nombre": "Sports",
+      "icono": "bi-trophy",
+      "descripcion": "Juegos deportivos con simulación realista de diferentes disciplinas",
+      "color": "#4ecdc4"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+.category-card-large {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid rgba(107, 70, 193, 0.2);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card-large::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.category-card-large:hover::before {
+  left: 100%;
+}
+
+.category-card-large:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.category-icon-large {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.category-count {
+  text-align: right;
+}
+
+.count-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.count-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.category-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: auto;
+  flex: 1;
+}
+
+.category-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(107, 70, 193, 0.2);
+}
+
+.cta-text {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-arrow {
+  color: var(--secondary-color);
+  font-size: 1.25rem;
+  transition: transform 0.2s;
+}
+
+.category-card-large:hover .cta-arrow {
+  transform: translateX(5px);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-category-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(107, 70, 193, 0.2);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.stat-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-category-card h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-bar {
+  height: 4px;
+  background: rgba(107, 70, 193, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  transition: width 1s ease;
+  border-radius: 2px;
+}
+
+.cta-section {
+  background: var(--gradient-dark);
+  border-top: 1px solid rgba(107, 70, 193, 0.2);
+}
+
+.cta-buttons .btn {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .category-card-large {
+    height: auto;
+    min-height: 250px;
+  }
+  
+  .category-icon-large {
+    font-size: 2.5rem;
+  }
+  
+  .count-number {
+    font-size: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .stat-category-card {
+    padding: 1rem;
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

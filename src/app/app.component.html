@@ -1,0 +1,81 @@
+<!-- Navbar Gaming -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-gaming sticky-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <i class="bi bi-controller me-2"></i>
+      GameHub
+    </a>
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      (click)="isNavbarCollapsed = !isNavbarCollapsed"
+      [attr.aria-expanded]="!isNavbarCollapsed" 
+      aria-controls="navbarContent"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="!isNavbarCollapsed" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="bi bi-house-door me-1"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/juegos" routerLinkActive="active">
+            <i class="bi bi-collection me-1"></i> Juegos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/categorias" routerLinkActive="active">
+            <i class="bi bi-grid-3x3-gap me-1"></i> Categorías
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer class="py-5 mt-5 bg-darker">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <h5 class="text-gradient mb-3">GameHub</h5>
+        <p class="text-secondary">Tu portal gaming favorito con los mejores videojuegos del momento.</p>
+        <div class="social-links mt-3">
+          <a href="#" class="me-3"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <h6 class="text-uppercase mb-3">Enlaces Rápidos</h6>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a routerLink="/juegos">Todos los Juegos</a></li>
+          <li class="mb-2"><a routerLink="/categorias">Categorías</a></li>
+          <li class="mb-2"><a href="#">Nuevos Lanzamientos</a></li>
+          <li class="mb-2"><a href="#">Más Populares</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <h6 class="text-uppercase mb-3">Plataformas</h6>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge-gaming">PC</span>
+          <span class="badge-gaming">PlayStation</span>
+          <span class="badge-gaming">Xbox</span>
+          <span class="badge-gaming">Nintendo Switch</span>
+          <span class="badge-gaming">Mobile</span>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4 border-secondary">
+    <div class="text-center">
+      <p class="mb-0 text-secondary">&copy; 2024 GameHub. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

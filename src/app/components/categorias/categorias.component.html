@@ -1,0 +1,108 @@
+<!-- Header -->
+<section class="categories-header py-5 bg-darker">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h1 class="title-gaming mb-4">Categorías de Juegos</h1>
+        <p class="lead text-secondary">
+          Explora nuestra colección organizada por géneros gaming. 
+          Desde intensos Battle Royale hasta creativos mundos Sandbox.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Grid de Categorías -->
+<section class="py-5">
+  <div class="container">
+    @if(categoriasConContador$ | async; as categorias) {
+      <div class="row g-4">
+        @for(categoria of categorias; track categoria.id) {
+          <div class="col-lg-4 col-md-6">
+            <a [routerLink]="['/categoria', categoria.id]" class="category-card-large">
+              <div class="category-header">
+                <div class="category-icon-large" [style.color]="categoria.color">
+                  <i class="bi" [class]="categoria.icono"></i>
+                </div>
+                <div class="category-count">
+                  <span class="count-number">{{categoria.contador}}</span>
+                  <span class="count-label">juegos</span>
+                </div>
+              </div>
+              <div class="category-content">
+                <h3 class="category-title">{{categoria.nombre}}</h3>
+                <p class="category-description">{{categoria.descripcion}}</p>
+                <div class="category-cta">
+                  <span class="cta-text">Explorar juegos</span>
+                  <i class="bi bi-arrow-right cta-arrow"></i>
+                </div>
+              </div>
+              <div class="category-overlay" [style.background]="'linear-gradient(135deg, ' + categoria.color + '20 0%, transparent 70%)'"></div>
+            </a>
+          </div>
+        }
+      </div>
+    } @else {
+      <!-- Estado de carga -->
+      <div class="loading-state text-center py-5">
+        <div class="spinner-border text-primary mb-3" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="text-secondary">Cargando categorías...</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Estadísticas por Categoría -->
+<section class="py-5 bg-darker">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="subtitle-gaming">Estadísticas por Género</h2>
+      <p class="text-secondary">Descubre qué géneros dominan el mundo gaming</p>
+    </div>
+    
+    @if(categoriasConContador$ | async; as categorias) {
+      <div class="stats-grid">
+        @for(categoria of categorias; track categoria.id) {
+          <div class="stat-category-card">
+            <div class="stat-icon" [style.color]="categoria.color">
+              <i class="bi" [class]="categoria.icono"></i>
+            </div>
+            <h4>{{categoria.nombre}}</h4>
+            <div class="stat-number" [style.color]="categoria.color">{{categoria.contador}}</div>
+            <div class="stat-label">juegos disponibles</div>
+            <div class="stat-bar">
+              <div class="stat-fill" 
+                   [style.width.%]="(categoria.contador / 15) * 100"
+                   [style.background-color]="categoria.color"></div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h2 class="subtitle-gaming mb-4">¿Listo para Explorar?</h2>
+        <p class="text-secondary mb-4">
+          Sumérgete en cualquiera de nuestras categorías y descubre tu próximo juego favorito
+        </p>
+        <div class="cta-buttons">
+          <a routerLink="/juegos" class="btn btn-gaming me-3">
+            <i class="bi bi-collection"></i> Ver Todos los Juegos
+          </a>
+          <a routerLink="/" class="btn btn-gaming-outline">
+            <i class="bi bi-house-door"></i> Volver al Inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
